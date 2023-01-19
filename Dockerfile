@@ -17,7 +17,8 @@ LABEL org.openbuildservice.disturl="%DISTURL%"
 LABEL org.opensuse.reference="registry.opensuse.org/opensuse/admin-tools:%%PKG_VERSION%%-%RELEASE%"
 # endlabelprefix
 
-RUN zypper --non-interactive install \
+RUN zypper --non-interactive install --no-recommends \
+  util-linux \
   "rubygem(yast-rake)" \
   "rubygem(fast_gettext)" \
   catatonit \
